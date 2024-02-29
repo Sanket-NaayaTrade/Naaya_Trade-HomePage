@@ -1,9 +1,9 @@
-
 import "./App.css";
+import SwiperComponent from "./components/SwiperComponent";
 
 function App() {
   return <div className="App">
-    <p className="bg-slate-700">Hello world!</p>
+    <SwiperComponent />
   </div>;
 }
 
