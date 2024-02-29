@@ -1,9 +1,11 @@
 
 import "./App.css";
 
+import HeroSection from "./components/HeroSection";
+
 function App() {
   return <div className="App">
-    <p className="bg-slate-700">Hello world!</p>
+    <HeroSection />
   </div>;
 }
 
