@@ -45,7 +45,7 @@ const Footer = () => {
   return (
     <div className="flex flex-col items-center py-6 bg-[#3A475B] text-white">
       <img src={require("../assets/naayaLogo.png")} className="h-[74px]" />
-      <h2>
+      <h2 className="font-semibold">
         Trade Alert-Delivery the latest product trends and industry news
         straight to your inbox.
       </h2>
@@ -54,7 +54,7 @@ const Footer = () => {
           placeholder="Your email"
           className="bg-inherit border-2 w-[16rem] px-2 py-[6px]"
         />
-        <button className="bg-[#FF6300] px-4 border-[1px]">Subscribe</button>
+        <button className="bg-[#FF6300] px-4 border-[1px] font-semibold">Subscribe</button>
       </div>
       <p className="pb-10 text-[14px]">
         We never share your email addres with a third-party
@@ -139,33 +139,33 @@ const Footer = () => {
           ))}
         </div>
       </div>
-      <p className="mt-8">
+      <p className="mt-8 text-[14px]">
         naayatarde.com Site:
         International-India-UK-london-Europe-Italiano-Turk=Nederlands-Indonesia
       </p>
       <div className="flex gap-x-2 mt-4">
-        <div>Browse Alphabetically Onetouch</div>
-        <div>|</div>
-        <div>Showroom</div>
-        <div>|</div>
-        <div>Country Search</div>
-        <div>|</div>
-        <div>Suppliers</div>
-        <div>|</div>
-        <div>Affiliate</div>
+        <div className="text-[14px]">Browse Alphabetically Onetouch</div>
+        <div className="text-[14px]">|</div>
+        <div className="text-[14px]">Showroom</div>
+        <div className="text-[14px]">|</div>
+        <div className="text-[14px]">Country Search</div>
+        <div className="text-[14px]">|</div>
+        <div className="text-[14px]">Suppliers</div>
+        <div className="text-[14px]">|</div>
+        <div className="text-[14px]">Affiliate</div>
       </div>
       <div className="flex gap-x-2 mt-4">
-        <div>Product Listing Policy</div>
-        <div>|</div>
-        <div>Intellectual Property Protection</div>
-        <div>|</div>
-        <div>Privacy Policy</div>
-        <div>|</div>
-        <div>Terms of Use</div>
-        <div>|</div>
-        <div>User Information Legal Enquiry Guide</div>
+        <div className="text-[14px]">Product Listing Policy</div>
+        <div className="text-[14px]">|</div>
+        <div className="text-[14px]">Intellectual Property Protection</div>
+        <div className="text-[14px]">|</div>
+        <div className="text-[14px]">Privacy Policy</div>
+        <div className="text-[14px]">|</div>
+        <div className="text-[14px]">Terms of Use</div>
+        <div className="text-[14px]">|</div>
+        <div className="text-[14px]">User Information Legal Enquiry Guide</div>
       </div>
-      <p className="mt-4">2019-2024 naayatrade.com. All rights reserved</p>
+      <p className="mt-4 text-[14px]">2019-2024 naayatrade.com. All rights reserved</p>
     </div>
   );
 };

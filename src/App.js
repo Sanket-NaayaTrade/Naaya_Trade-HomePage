@@ -1,9 +1,10 @@
 
 import "./App.css";
+import Footer from "./components/Footer";
 
 function App() {
   return <div className="App">
-    <p className="bg-slate-700">Hello world!</p>
+    <Footer />
   </div>;
 }
 
