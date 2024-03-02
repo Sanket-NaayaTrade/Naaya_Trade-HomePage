@@ -10,7 +10,7 @@ import img1 from "../assets/Rectangle 323.png";
 const Features = () => {
   return (
     <div className="h-[100vh] w-full flex items-center justify-center">
-      <div className="bg-yellow-500 h-[510px] w-full">
+      <div className="h-[510px] w-full">
 
         <Swiper 
         slidesPerView={3}
