@@ -45,6 +45,7 @@ const FeatureSlide = () => {
                       Lorem ipsum dolor sit amet consectetur, adipisicing elit.{" "}
                     </p>
                     <button className="w-[229px] h-[41px] bg-[#FF6300] rounded-[5px]">
+              
                       Send Enquiry
                     </button>
                   </div>
