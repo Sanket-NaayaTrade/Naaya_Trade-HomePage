@@ -71,7 +71,7 @@ export const RFQSection = () => {
             {/* rfq Step 1 */}
             {showRfq1 && (
               <div className="rfq-step-1">
-                <div className="rfq-inputs my-[20px] mx-[24px] text-left">
+                <div className="my-[20px] mx-[24px] text-left">
                   <div className="text-[20px] font-[600] text-[#FF6300] leading-[28px]">
                     Send Quotations
                   </div>
@@ -158,7 +158,7 @@ export const RFQSection = () => {
             {/* rfq Step 2 */}
             {showRfq2 && (
               <div className="rfq-step-2">
-                <div className="rfq-inputs my-[20px] mx-[24px] text-left">
+                <div className="my-[20px] mx-[24px] text-left">
                   <div className="text-[16px] font-[600] leading-[28px] mt-[28px]">
                     Enter Quantity
                   </div>
@@ -173,7 +173,7 @@ export const RFQSection = () => {
                   <div className="text-[16px] font-[560] leading-[28px] mt-[20px]">
                     Approximate Order Value
                   </div>
-                  <div className="grid grid-cols-2 flex gap-4 w-[90%]">
+                  <div className="grid grid-cols-2 gap-4 w-[90%]">
                     <input
                       className="col-start-1 col-end-2 h-[55px] rounded-[5px] shadow px-[16px] mt-[10px]"
                       placeholder="₹ ...."
