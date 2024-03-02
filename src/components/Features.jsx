@@ -1,10 +1,25 @@
 import React from "react";
+import { Swiper, SwiperSlide } from 'swiper/react';
+import "swiper/css";
+import "swiper/css/pagination";
+
+import { Pagination } from 'swiper/modules';
+
 import img1 from "../assets/Rectangle 323.png";
 
 const Features = () => {
   return (
     <div className="h-[100vh] w-full flex items-center justify-center">
       <div className="bg-yellow-500 h-[510px] w-full">
+
+        <Swiper 
+        slidesPerView={3}
+        spaceBetween={30}
+        pagination={{
+          clickable: true,
+        }}>
+
+        </Swiper>
         <div className="bg-white drop-shadow-[0_0px_10px_rgba(0,0,0,0.25)] absolute left-[20px] w-[260px] h-[418px] rounded-[10px]">
           <div className="flex items-center justify-center h-[418px]">
             <div className="grid justify-center">
