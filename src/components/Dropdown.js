@@ -248,11 +248,104 @@ export const BuyCentral = (
             <h2 className="font-bold pb-[20px] text-[16px]">{item.title}</h2>
             {item.option.map((data, i) => (
               <React.Fragment key={i}>
-                <p className="pt-3 font-semibold">{data}</p>
+                <p className="pt-3 font-semibold hover:text-[#FF6300] cursor-pointer">
+                  {data}
+                </p>
               </React.Fragment>
             ))}
           </div>
         ))}
+      </div>
+    </DropdownMenuContent>
+  </DropdownMenu>
+);
+
+const categoriesType = [
+  { type: "Consumer Electronics", img: require("../assests/camera.png") },
+  { type: "Fashion & Apparels", img: require("../assests/camera.png") },
+  { type: "Fashion & Apparels", img: require("../assests/camera.png") },
+  { type: "Sports & Entertainment", img: require("../assests/camera.png") },
+  { type: "Industrial Machinery", img: require("../assests/camera.png") },
+  { type: "Home & Garden", img: require("../assests/camera.png") },
+  { type: "Beauty & Personal Care", img: require("../assests/camera.png") },
+  { type: "Animal & pet", img: require("../assests/camera.png") },
+];
+
+const consumer = [
+  { img: require("../assests/watch.png"), productTitle: "Smart Watches" },
+  { img: require("../assests/watch.png"), productTitle: "Smart Watches" },
+  { img: require("../assests/watch.png"), productTitle: "Smart Watches" },
+  { img: require("../assests/watch.png"), productTitle: "Smart Watches" },
+  { img: require("../assests/watch.png"), productTitle: "Smart Watches" },
+  { img: require("../assests/watch.png"), productTitle: "Smart Watches" },
+  { img: require("../assests/watch.png"), productTitle: "Smart Watches" },
+  { img: require("../assests/watch.png"), productTitle: "Smart Watches" },
+  { img: require("../assests/watch.png"), productTitle: "Smart Watches" },
+  { img: require("../assests/watch.png"), productTitle: "Smart Watches" },
+  { img: require("../assests/watch.png"), productTitle: "Smart Watches" },
+  { img: require("../assests/watch.png"), productTitle: "Smart Watches" },
+];
+
+export const Categories = (
+  <DropdownMenu>
+    <DropdownMenuTrigger asChild>
+      <p className="hover:text-[#FF6300] cursor-pointer">Categories</p>
+    </DropdownMenuTrigger>
+    <DropdownMenuContent
+      className={`w-[100vw] h-[509px] px-8 shadow-[0_6px_20px_0_rgba(0,0,0,0.25)]`}
+    >
+      <h2 className="text-left text-[16px] px-[6.4rem] font-bold py-[26px] text-[#FF6300]">
+        Categories
+      </h2>
+      <div className="flex px-[50px] ml-[28px] text-left py-[3px]">
+        <div className="flex flex-col gap-y-[10px] w-[500px] h-[380px] px-[26px] overflow-y-auto">
+          {categoriesType.map((item, i) => (
+            <div
+              className="flex w-[266px] justify-between bg-[#FFE3C7] py-[12px] relative"
+              key={i}
+            >
+              <div className="border-[3px] border-l-[#FF6300] h-[52px] rounded-full absolute top-0" />
+              <div className="flex pl-[14px] gap-x-[11px]">
+                <img
+                  className="w-[27px] h-[27px] bg-white rounded-full"
+                  src={item.img}
+                />
+                {item.type}
+              </div>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="25"
+                height="25"
+                viewBox="0 0 25 25"
+                fill="none"
+              >
+                <path
+                  d="M8.54147 6.95825L13.9932 12.5061L8.44539 17.9578"
+                  stroke="black"
+                  stroke-opacity="0.6"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+              </svg>
+            </div>
+          ))}
+        </div>
+        <div className="ml-[32px]">
+          <h2 className="font-bold text-[16px] mb-[2rem] underline decoration-4 underline-offset-[10px] decoration-[#FF8100]">
+            Consumer Electronics
+          </h2>
+          <div className="flex flex-wrap gap-x-[50px] gap-y-[62px] mt-[46px]">
+            {consumer.map((data, i) => (
+              <div className="flex flex-col items-center" key={i}>
+                <img src={data.img} className="h-[33px] w-[33px] mb-[32px]" />
+                <h2 className="text-[12px] font-semibold">
+                  {data.productTitle}
+                </h2>
+              </div>
+            ))}
+          </div>
+        </div>
       </div>
     </DropdownMenuContent>
   </DropdownMenu>
