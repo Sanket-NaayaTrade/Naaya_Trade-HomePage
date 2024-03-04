@@ -1,20 +1,26 @@
-import React from "react";
+import React, { useState } from "react";
+import { BuyCentral, CurrencyChange, Languages, ShipTo, tradeShows } from "./Dropdown";
 
 const Navbar = () => {
   return (
-    <div className="px-[5rem] shadow-lg py-3">
+    <div className="px-[101px] shadow-lg py-3 text-[13px]">
       <div className="flex justify-between">
         <div className="flex gap-x-4">
           <div className="flex items-center gap-x-2">
+            <p>Ship to:</p>
             <img
               src={require("../assests/India-flag.png")}
               className="h-[12px]"
             />
-            <p>Ship to:</p>
+            {ShipTo}
           </div>
-          <p>|</p>
-          <p>Language -</p>
-          <p>|</p>
+          <p className="opacity-45" >|</p>
+          <div className="flex items-center gap-x-2">
+            <p>Language -</p>
+            <p>English US</p>
+            {Languages}
+          </div>
+          <p className="opacity-45" >|</p>
           <div className="flex items-center gap-x-2">
             <p>Currency:</p>
             <img
@@ -22,8 +28,9 @@ const Navbar = () => {
               className="h-[12px]"
             />
             <p>INR</p>
+            {CurrencyChange}
           </div>
-          <p>|</p>
+          <p className="opacity-45" >|</p>
           <div className="flex gap-x-1">
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -45,19 +52,37 @@ const Navbar = () => {
         <div className="flex gap-x-8">
           <div className="flex gap-x-1 items-center">
             <svg
-              xmlns="http://www.w3.org/2000/svg"
+              width="15"
+              height="15"
+              viewBox="0 0 15 15"
               fill="none"
-              viewBox="0 0 24 24"
-              stroke-width="1.5"
-              stroke="currentColor"
-              class="w-6 h-6"
+              xmlns="http://www.w3.org/2000/svg"
             >
-              <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                d="M12 6v12m-3-2.818.879.659c1.171.879 3.07.879 4.242 0 1.172-.879 1.172-2.303 0-3.182C13.536 12.219 12.768 12 12 12c-.725 0-1.45-.22-2.003-.659-1.106-.879-1.106-2.303 0-3.182s2.9-.879 4.006 0l.415.33M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"
-              />
+              <g clip-path="url(#clip0_1_1276)">
+                <path
+                  d="M5.9375 1.875H9.0625C9.31114 1.875 9.5496 1.97377 9.72541 2.14959C9.90123 2.3254 10 2.56386 10 2.8125C10 3.39266 9.76953 3.94906 9.3593 4.3593C8.94906 4.76953 8.39266 5 7.8125 5H7.1875C6.60734 5 6.05094 4.76953 5.6407 4.3593C5.23047 3.94906 5 3.39266 5 2.8125C5 2.56386 5.09877 2.3254 5.27459 2.14959C5.4504 1.97377 5.68886 1.875 5.9375 1.875Z"
+                  stroke="#2C3E50"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+                <path
+                  d="M2.5 10.625V10C2.5 8.67392 3.02678 7.40215 3.96447 6.46447C4.90215 5.52678 6.17392 5 7.5 5C8.82608 5 10.0979 5.52678 11.0355 6.46447C11.9732 7.40215 12.5 8.67392 12.5 10V10.625C12.5 11.288 12.2366 11.9239 11.7678 12.3928C11.2989 12.8616 10.663 13.125 10 13.125H5C4.33696 13.125 3.70107 12.8616 3.23223 12.3928C2.76339 11.9239 2.5 11.288 2.5 10.625Z"
+                  stroke="#2C3E50"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+                <path
+                  d="M9.49148 7.7017L9.3402 8.25994H6.51278L6.66619 7.7017H9.49148ZM8.07031 11L6.57884 9.20597L6.5767 8.73295H7.31392C7.49006 8.73295 7.63707 8.70384 7.75497 8.6456C7.87429 8.58594 7.96449 8.50284 8.02557 8.39631C8.08807 8.28835 8.11932 8.16193 8.11932 8.01705C8.11932 7.79972 8.0554 7.625 7.92756 7.4929C7.79972 7.3608 7.59517 7.29474 7.31392 7.29474H6.51278L6.67898 6.63636H7.31392C7.67188 6.63636 7.96804 6.69176 8.20241 6.80256C8.43821 6.91193 8.61435 7.06676 8.73082 7.26705C8.84872 7.46733 8.90767 7.7017 8.90767 7.97017C8.90767 8.20739 8.86435 8.41903 8.7777 8.60511C8.69105 8.79119 8.55469 8.94389 8.36861 9.06321C8.18253 9.18253 7.93892 9.26207 7.63778 9.30185L7.61222 9.31037L8.95881 10.9616V11H8.07031ZM9.49574 6.63636L9.3402 7.20312L7.04759 7.1946L7.20312 6.63636H9.49574Z"
+                  fill="#2C3E50"
+                />
+              </g>
+              <defs>
+                <clipPath id="clip0_1_1276">
+                  <rect width="15" height="15" fill="white" />
+                </clipPath>
+              </defs>
             </svg>
+
             <p>Sell On Naayatrade</p>
           </div>
           <div className="flex gap-x-2">
@@ -115,17 +140,61 @@ const Navbar = () => {
           </div>
         </div>
       </div>
-      <div className="flex items-center py-4 justify-between">
-        <img src={require("../assests/naayaLogo.png")} className="h-[4rem]" />
-        <div className="flex justify-between items-center border-2 w-[38rem] border-black px-1 py-1 rounded-full">
+      <div className="flex items-center py-[18px] justify-between">
+        <img src={require("../assests/naayaLogo.png")} className="h-[53px]" />
+        <div className="flex justify-between items-center border-2 w-[720px] border-black px-1 py-1 rounded-full">
           <div className="flex items-center gap-x-4">
-            <p className="pl-4">Products</p>
-            <p>|</p>
-            <input className="focus:outline-none ml-4 w-[18rem]" />
+            <div className="flex items-center gap-x-2">
+              <p className="pl-4">Products</p>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="9"
+                height="4"
+                viewBox="0 0 9 4"
+                fill="none"
+                className="cursor-pointer"
+              >
+                <path
+                  d="M4.19071 3.75649C4.37216 3.89935 4.62784 3.89935 4.80929 3.75649L8.12906 1.14286C8.50195 0.849278 8.29436 0.25 7.81976 0.25H1.18024C0.705643 0.25 0.498046 0.849278 0.870941 1.14286L4.19071 3.75649Z"
+                  fill="#858585"
+                />
+              </svg>
+            </div>
+            <p className="opacity-45" >|</p>
+            <input placeholder="What are you looking for ?" className="focus:outline-none ml-4 w-[18rem]" />
           </div>
-          <div className="bg-[#FF6300] cursor-pointer px-6 py-1 rounded-full">
-            <p className="text-white">Search</p>
-          </div>
+          <button className="flex items-center text-white gap-x-2 bg-[#FF6300] cursor-pointer px-6 py-1 rounded-full">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="16"
+              height="16"
+              viewBox="0 0 13 13"
+              fill="none"
+            >
+              <g clip-path="url(#clip0_1_1267)">
+                <path
+                  d="M5.95833 10.2917C8.35157 10.2917 10.2917 8.35157 10.2917 5.95833C10.2917 3.5651 8.35157 1.625 5.95833 1.625C3.5651 1.625 1.625 3.5651 1.625 5.95833C1.625 8.35157 3.5651 10.2917 5.95833 10.2917Z"
+                  stroke="white"
+                  stroke-width="1.5"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+                <path
+                  d="M11.375 11.375L9.01874 9.0188"
+                  stroke="white"
+                  stroke-width="1.5"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+              </g>
+              <defs>
+                <clipPath id="clip0_1_1267">
+                  <rect width="13" height="13" fill="white" />
+                </clipPath>
+              </defs>
+            </svg>
+            Search
+          </button>
         </div>
         <div className="flex items-center gap-x-4">
           <div className="flex items-center gap-x-2">
@@ -152,8 +221,11 @@ const Navbar = () => {
           </div>
         </div>
       </div>
-      <div className="flex gap-x-3">
-        <div className="flex gap-x-1">
+      <div className="relative mb-2">
+        <div className="w-[99vw] absolute left-[-6rem] bg-white border-[1px]" />
+      </div>
+      <div className="flex items-center gap-x-3">
+        <div className="flex items-center gap-x-1">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
@@ -170,21 +242,21 @@ const Navbar = () => {
           </svg>
           <p className="hover:text-[#FF6300] cursor-pointer">Categories</p>
         </div>
-        <p>|</p>
+        <p className="opacity-45" >|</p>
         <p className="hover:text-[#FF6300] cursor-pointer">Ready to ship</p>
-        <p>|</p>
+        <p className="opacity-45" >|</p>
         <p className="hover:text-[#FF6300] cursor-pointer">
           Naayatrade Membership
         </p>
-        <p>|</p>
-        <p className="hover:text-[#FF6300] cursor-pointer">Buyer Central</p>
-        <p>|</p>
-        <p className="hover:text-[#FF6300] cursor-pointer">Trade Shows</p>
-        <p>|</p>
+        <p className="opacity-45" >|</p>
+        {BuyCentral}
+        <p className="opacity-45" >|</p>
+        {tradeShows}
+        <p className="opacity-45" >|</p>
         <p className="hover:text-[#FF6300] cursor-pointer">
           Sell on Naayatrade
         </p>
-        <p>|</p>
+        <p className="opacity-45" >|</p>
         <p className="hover:text-[#FF6300] cursor-pointer">Help</p>
       </div>
     </div>
