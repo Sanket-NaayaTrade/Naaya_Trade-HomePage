@@ -3,21 +3,25 @@ import {
   DropdownMenuContent,
   DropdownMenuTrigger,
 } from "@radix-ui/react-dropdown-menu";
-import React from "react";
+import React, { useState } from "react";
 import NavbarSwiperComponent from "./NavbarSwiperComponent";
+import { TickSVG } from "./allSvg";
 
 export const ShipTo = (
   <DropdownMenu>
     <DropdownMenuTrigger asChild>
-      <svg width="10" height="9" viewBox="0 0 10 3" fill="none">
-        <path
-          d="M1 1L4.5 4L8 1"
-          stroke="black"
-          stroke-opacity="0.6"
-          stroke-linecap="round"
-          stroke-linejoin="round"
-        />
-      </svg>
+      <div className="flex gap-x-[10px] cursor-pointer">
+        <img src={require("../assests/India-flag.png")} className="h-[12px]" />
+        <svg width="10" height="9" viewBox="0 0 10 3" fill="none">
+          <path
+            d="M1 1L4.5 4L8 1"
+            stroke="black"
+            stroke-opacity="0.6"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          />
+        </svg>
+      </div>
     </DropdownMenuTrigger>
     <DropdownMenuContent
       className={`z-10 w-[307px] h-[433px] mt-4 px-8 bg-white rounded-[10px] shadow-[0_6px_20px_0_rgba(0,0,0,0.25)]`}
@@ -86,15 +90,20 @@ export const ShipTo = (
 export const Languages = (
   <DropdownMenu>
     <DropdownMenuTrigger asChild>
-      <svg width="10" height="9" viewBox="0 0 10 3" fill="none">
-        <path
-          d="M1 1L4.5 4L8 1"
-          stroke="black"
-          stroke-opacity="0.6"
-          stroke-linecap="round"
-          stroke-linejoin="round"
-        />
-      </svg>
+      <div className="flex items-center gap-x-2">
+        <p>Language -</p>
+        <img src={require("../assests/USAFlag.png")} className="h-[12px]" />
+        <p>English US</p>
+        <svg width="10" height="9" viewBox="0 0 10 3" fill="none">
+          <path
+            d="M1 1L4.5 4L8 1"
+            stroke="black"
+            stroke-opacity="0.6"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          />
+        </svg>
+      </div>
     </DropdownMenuTrigger>
     <DropdownMenuContent
       className={`z-10 w-[300px] h-[230px] mt-4 px-8 bg-white rounded-[10px] shadow-[0_6px_20px_0_rgba(0,0,0,0.25)]`}
@@ -139,15 +148,19 @@ export const Languages = (
 export const CurrencyChange = (
   <DropdownMenu>
     <DropdownMenuTrigger asChild>
-      <svg width="10" height="9" viewBox="0 0 10 3" fill="none">
-        <path
-          d="M1 1L4.5 4L8 1"
-          stroke="black"
-          stroke-opacity="0.6"
-          stroke-linecap="round"
-          stroke-linejoin="round"
-        />
-      </svg>
+      <div className="flex gap-x-2 items-center cursor-pointer">
+        <img src={require("../assests/India-flag.png")} className="h-[12px]" />
+        <p>INR (₹)</p>
+        <svg width="10" height="9" viewBox="0 0 10 3" fill="none">
+          <path
+            d="M1 1L4.5 4L8 1"
+            stroke="black"
+            stroke-opacity="0.6"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          />
+        </svg>
+      </div>
     </DropdownMenuTrigger>
     <DropdownMenuContent
       className={`z-10 w-[300px] h-[230px] mt-4 px-8 bg-white rounded-[10px] shadow-[0_6px_20px_0_rgba(0,0,0,0.25)]`}
@@ -165,7 +178,7 @@ export const CurrencyChange = (
             className="h-[10px]"
             alt="India Flag"
           />
-          <p className="text-[12px]">India</p>
+          <p className="text-[12px]">India - INR (₹)</p>
         </div>
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -189,13 +202,59 @@ export const CurrencyChange = (
   </DropdownMenu>
 );
 
+// user can select "product" or "supplier" option
+export const UserType = () => {
+  const [selectType, setSelectType] = useState(0);
+
+  return (
+    <DropdownMenu>
+      <DropdownMenuTrigger asChild>
+        <div className="flex items-center gap-x-2 cursor-pointer">
+          <p className="pl-4">Products</p>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="9"
+            height="4"
+            viewBox="0 0 9 4"
+            fill="none"
+            className="cursor-pointer"
+          >
+            <path
+              d="M4.19071 3.75649C4.37216 3.89935 4.62784 3.89935 4.80929 3.75649L8.12906 1.14286C8.50195 0.849278 8.29436 0.25 7.81976 0.25H1.18024C0.705643 0.25 0.498046 0.849278 0.870941 1.14286L4.19071 3.75649Z"
+              fill="#858585"
+            />
+          </svg>
+        </div>
+      </DropdownMenuTrigger>
+      <DropdownMenuContent
+        className={`z-10 w-[150px] h-[90px] mt-[10px] px-[18px] rounded-xl bg-white shadow-[0_6px_20px_0_rgba(0,0,0,0.25)]`}
+      >
+        <div
+          onClick={() => setSelectType(0)}
+          className="flex justify-between items-center pt-3 cursor-pointer"
+        >
+          <p className="text-left">Products</p>
+          {selectType === 0 && <>{TickSVG}</>}
+        </div>
+        <div
+          onClick={() => setSelectType(1)}
+          className="flex justify-between items-center pt-2 cursor-pointer"
+        >
+          <p className="text-left">Supplier</p>
+          {selectType === 1 && <>{TickSVG}</>}
+        </div>
+      </DropdownMenuContent>
+    </DropdownMenu>
+  );
+};
+
 export const tradeShows = (
   <DropdownMenu>
     <DropdownMenuTrigger asChild>
       <p className="hover:text-[#FF6300] cursor-pointer">Trade Show</p>
     </DropdownMenuTrigger>
     <DropdownMenuContent
-      className={`w-[100vw] h-[301px] flex flex-col items-start mt-4 px-[32px] bg-white shadow-[0_6px_20px_0_rgba(0,0,0,0.25)]`}
+      className={`z-10 w-[100vw] h-[301px] flex flex-col items-start mt-4 px-[32px] bg-white shadow-[0_6px_20px_0_rgba(0,0,0,0.25)]`}
     >
       <p className="text-[#FF6300] font-bold pt-[26px]">Trade Shows</p>
       <NavbarSwiperComponent />
@@ -240,7 +299,7 @@ export const BuyCentral = (
       <p className="hover:text-[#FF6300] cursor-pointer">Buy Central</p>
     </DropdownMenuTrigger>
     <DropdownMenuContent
-      className={`w-[100vw] h-[275px] mt-4 px-8 shadow-[0_6px_20px_0_rgba(0,0,0,0.25)]`}
+      className={`z-10 w-[100vw] h-[275px] mt-4 px-8 shadow-[0_6px_20px_0_rgba(0,0,0,0.25)]`}
     >
       <div className="flex justify-between px-[82px] text-left py-[34px]">
         {centralOptions.map((item, index) => (
@@ -292,7 +351,7 @@ export const Categories = (
       <p className="hover:text-[#FF6300] cursor-pointer">Categories</p>
     </DropdownMenuTrigger>
     <DropdownMenuContent
-      className={`w-[100vw] h-[509px] px-8 shadow-[0_6px_20px_0_rgba(0,0,0,0.25)]`}
+      className={`z-10 w-[100vw] h-[509px] px-8 shadow-[0_6px_20px_0_rgba(0,0,0,0.25)]`}
     >
       <h2 className="text-left text-[16px] px-[6.4rem] font-bold py-[26px] text-[#FF6300]">
         Categories
