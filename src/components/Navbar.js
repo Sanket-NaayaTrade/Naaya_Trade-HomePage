@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import {
   BuyCentral,
   Categories,
@@ -8,11 +8,56 @@ import {
   UserType,
   tradeShows,
 } from "./Dropdown";
-import { CameraSVG, CartSVG, CategoriesSVG, DollarPouchSVG, MessageSVG, SearchSVG, UserSVG } from "./allSvg";
+import {
+  CameraSVG,
+  CartSVG,
+  CategoriesSVG,
+  DollarPouchSVG,
+  MessageSVG,
+  OrderSVG,
+  SearchSVG,
+  UserSVG,
+} from "./allSvg";
 
 const Navbar = () => {
+  const [isVisible, setIsVisible] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrollTop = window.scrollY;
+
+      if (scrollTop > 160) {
+        setIsVisible(true);
+      } else {
+        setIsVisible(false);
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
+  const scrollToTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
+  };
+
   return (
-    <div className=" shadow-lg py-3 text-[13px]">
+    <div className=" shadow-lg py-3 text-[13px] mb-[100rem]">
+      <button
+        className={`${
+          isVisible ? "visible" : "invisible"
+        } fixed animate-bounce bottom-12 right-12 bg-[#FF6300] text-white px-4 py-2 rounded-full`}
+        onClick={scrollToTop}
+        title="Scroll to Top"
+      >
+        &uarr;
+      </button>
       <div className="max-w-[1241px] m-auto">
         <div className="flex justify-between">
           <div className="flex gap-x-4">
@@ -97,20 +142,13 @@ const Navbar = () => {
               <p className="w-[6rem] ml-[-8px]">Request for Quotations</p>
             </div>
             <div className="flex items-center">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                height="36"
-                viewBox="0 -960 960 960"
-                width="36"
-              >
-                <path d="M441-120v-86q-53-12-91.5-46T293-348l74-30q15 48 44.5 73t77.5 25q41 0 69.5-18.5T587-356q0-35-22-55.5T463-458q-86-27-118-64.5T313-614q0-65 42-101t86-41v-84h80v84q50 8 82.5 36.5T651-650l-74 32q-12-32-34-48t-60-16q-44 0-67 19.5T393-614q0 33 30 52t104 40q69 20 104.5 63.5T667-358q0 71-42 108t-104 46v84h-80Z" />
-              </svg>
+              {OrderSVG}
               <p>Orders</p>
             </div>
           </div>
         </div>
         <div className="relative mb-2">
-          <div className="w-[100vw] absolute left-[-9.6rem] bg-white border-[1px]" />
+          <div className="w-[99.4vw] absolute left-[-9.6rem] bg-white border-[1px]" />
         </div>
         <div className="flex items-center gap-x-3">
           <div className="flex items-center gap-x-1">

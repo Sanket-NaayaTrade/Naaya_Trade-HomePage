@@ -25,12 +25,7 @@ export const CameraSVG = (
 );
 
 export const TickSVG = (
-  <svg
-    width="31"
-    height="31"
-    viewBox="0 0 31 31"
-    fill="none"
-  >
+  <svg width="31" height="31" viewBox="0 0 31 31" fill="none">
     <path
       d="M13.5564 19.9622C13.4111 20.1075 13.2052 20.2286 13.0236 20.2286C12.842 20.2286 12.6361 20.1015 12.4847 19.9562L9.09412 16.5655L10.1719 15.4878L13.0297 18.3456L20.5859 10.7349L21.6455 11.8308L13.5564 19.9622Z"
       fill="black"
@@ -41,12 +36,7 @@ export const TickSVG = (
 );
 
 export const SearchSVG = (
-  <svg
-    width="16"
-    height="16"
-    viewBox="0 0 13 13"
-    fill="none"
-  >
+  <svg width="16" height="16" viewBox="0 0 13 13" fill="none">
     <g clip-path="url(#clip0_1_1267)">
       <path
         d="M5.95833 10.2917C8.35157 10.2917 10.2917 8.35157 10.2917 5.95833C10.2917 3.5651 8.35157 1.625 5.95833 1.625C3.5651 1.625 1.625 3.5651 1.625 5.95833C1.625 8.35157 3.5651 10.2917 5.95833 10.2917Z"
@@ -87,13 +77,40 @@ export const CategoriesSVG = (
   </svg>
 );
 
-export const DollarPouchSVG = (
+export const OrderSVG = (
   <svg
-    width="15"
-    height="15"
-    viewBox="0 0 15 15"
+    xmlns="http://www.w3.org/2000/svg"
+    width="30"
+    height="30"
+    viewBox="0 0 30 30"
     fill="none"
   >
+    <g clip-path="url(#clip0_1_1247)">
+      <path
+        d="M20.875 10C20.6262 9.29405 20.1718 8.67871 19.5703 8.23317C18.9689 7.78763 18.2478 7.53229 17.5 7.5H12.5C11.5054 7.5 10.5516 7.89509 9.84835 8.59835C9.14509 9.30161 8.75 10.2554 8.75 11.25C8.75 12.2446 9.14509 13.1984 9.84835 13.9017C10.5516 14.6049 11.5054 15 12.5 15H17.5C18.4946 15 19.4484 15.3951 20.1517 16.0983C20.8549 16.8016 21.25 17.7554 21.25 18.75C21.25 19.7446 20.8549 20.6984 20.1517 21.4017C19.4484 22.1049 18.4946 22.5 17.5 22.5H12.5C11.7522 22.4677 11.0311 22.2124 10.4297 21.7668C9.82819 21.3213 9.37381 20.706 9.125 20"
+        stroke="#000000"
+        stroke-width="2"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      />
+      <path
+        d="M15 3.75V7.5M15 22.5V26.25"
+        stroke="#000000"
+        stroke-width="2"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      />
+    </g>
+    <defs>
+      <clipPath id="clip0_1_1247">
+        <rect width="30" height="30" fill="white" />
+      </clipPath>
+    </defs>
+  </svg>
+);
+
+export const DollarPouchSVG = (
+  <svg width="15" height="15" viewBox="0 0 15 15" fill="none">
     <g clip-path="url(#clip0_1_1276)">
       <path
         d="M5.9375 1.875H9.0625C9.31114 1.875 9.5496 1.97377 9.72541 2.14959C9.90123 2.3254 10 2.56386 10 2.8125C10 3.39266 9.76953 3.94906 9.3593 4.3593C8.94906 4.76953 8.39266 5 7.8125 5H7.1875C6.60734 5 6.05094 4.76953 5.6407 4.3593C5.23047 3.94906 5 3.39266 5 2.8125C5 2.56386 5.09877 2.3254 5.27459 2.14959C5.4504 1.97377 5.68886 1.875 5.9375 1.875Z"
