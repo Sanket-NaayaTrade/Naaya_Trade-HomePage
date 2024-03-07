@@ -94,7 +94,7 @@ export const Languages = (
         <p>Language -</p>
         <img src={require("../assests/USAFlag.png")} className="h-[12px]" />
         <p>English US</p>
-        <svg width="10" height="9" viewBox="0 0 10 3" fill="none">
+        <svg width="10" height="9" viewBox="0 0 10 3" fill="none" className="cursor-pointer">
           <path
             d="M1 1L4.5 4L8 1"
             stroke="black"
