@@ -63,7 +63,8 @@ body {
 
 .swiper-button-prev, .swiper-button-next {
     color : black !important;
-    max-height: 50px !important;
+    height: 22px !important;
+    width: 11px !important;
     margin-top: 0px !important;
     
 }

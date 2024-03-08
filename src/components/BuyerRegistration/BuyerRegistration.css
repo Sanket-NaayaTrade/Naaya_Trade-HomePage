@@ -1,0 +1,22 @@
+/* .hidden {
+    display: none;
+}
+
+.visible {
+    display: block;
+} */
+
+.btnChange:focus::before {
+    content: attr(data-text);
+}
+.btnChange:focus {
+    outline: none;
+}
+
+.btnChange::before {
+    content: 'SignIn';
+}
+
+.btnChange:focus::before {
+    content: 'SignUp';
+}

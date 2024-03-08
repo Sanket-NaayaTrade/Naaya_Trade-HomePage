@@ -22,7 +22,6 @@ export const RFQSection = () => {
   };
   // RadioButton End
 
-  //const [rfqInputs, setRfqInputs] = useState();
   const [showRfq1, setShowRfq1] = useState(true);
   const [showRfq2, setShowRfq2] = useState(false);
   const [showRfq3, setShowRfq3] = useState(false);
