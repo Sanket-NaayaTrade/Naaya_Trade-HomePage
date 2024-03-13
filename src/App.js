@@ -1,10 +1,14 @@
-
 import "./App.css";
+import Navbar from "./components/Navbar";
+import Product from "./screens/Product";
 
 function App() {
-  return <div className="App">
-    <p className="bg-slate-700">Hello world!</p>
-  </div>;
+  return (
+    <div className="App">
+      <Navbar />
+      <Product />
+    </div>
+  );
 }
 
 export default App;
