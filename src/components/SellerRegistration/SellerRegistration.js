@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
+
 import bgImg from "../../assets/bg-img.png";
 import roundLogoX from "../../assets/roundLogoX.png";
 import roundLogoY from "../../assets/roundLogoY.png";
@@ -8,6 +9,8 @@ import googleLogo from "../../assets/google.png"; // googleLogo
 import fbLogo from "../../assets/facebook.png"; // fbLogo
 import msOutlookLogo from "../../assets/microsoft-outlook.png"; // msOutlookLogo
 import microsoftLogo from "../../assets/microsoft.png"; // microsoftLogo
+
+import data from "./data.json";
 
 export const SellerRegistration = (props) => {
   const navigate = useNavigate();
@@ -26,6 +29,17 @@ export const SellerRegistration = (props) => {
   };
 
   const [refresh, setRefresh] = useState(false);
+  const [countries, setCountries] = useState([]);
+  const [selectedCountry, setSelectedCountry] = useState("");
+  const [states, setStates] = useState([]);
+  const [selectedState, setSelectedState] = useState("");
+  const [cities, setCities] = useState([]);
+  const [selectedCity, setSelectedCity] = useState("");
+
+  useEffect(() => {
+    // Load countries from data.json
+    setCountries(data.countries);
+  }, []);
 
   const LeftDiv = (
     <div className="orange-section  h-[750px] w-[100%] relative  bg-gradient-to-t from-[#FF6300] to-[#FFA165]">
@@ -169,6 +183,19 @@ export const SellerRegistration = (props) => {
             <div className="col-start-1 col-end-4">
               <div className="flex flex-col float-start ml-0 text-left w-[100%]">
                 <p className="text-[14px] font-[500] text-black">Country</p>
+                {/* <div>
+                  <Select
+                    value={selectedCountry}
+                    onValueChange={(value) => setSelectedCountry(value)}
+                    defaultValue=""
+                    placeholder="Select Country">
+                    {countries.map((country) => (
+                      <Select.Option key={country} value={country}>
+                        {country}
+                      </Select.Option>
+                    ))}
+                  </Select> */}
+                {/* </div> */}
                 <select
                   className="w-[163px] h-[30px] rounded-[5px] text-[12px] font-[500] border-[1px] pl-[11px] shadow mt-[5px] leading-[18px]"
                   // value={selectedOption}
@@ -177,9 +204,9 @@ export const SellerRegistration = (props) => {
                   <option className="text-[#B3B3B3]" value="">
                     Select Country
                   </option>
-                  {options.map((option) => (
-                    <option key={option.value} value={option.value}>
-                      {option.label}
+                  {countries.map((country) => (
+                    <option key={country.name} value={country.name}>
+                      {country.name}
                     </option>
                   ))}
                 </select>
